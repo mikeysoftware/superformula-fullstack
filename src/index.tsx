@@ -5,10 +5,12 @@ import reportWebVitals from "./reportWebVitals";
 
 // Providers
 import ApolloProvider from "./providers/ApolloProvider";
+import StyleProvider from "./providers/StyleProvider";
 
 ReactDOM.render(
   <ApolloProvider>
     <React.StrictMode>
+      <StyleProvider />
       <App />
     </React.StrictMode>
   </ApolloProvider>,

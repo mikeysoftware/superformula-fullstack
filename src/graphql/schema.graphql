@@ -1,0 +1,131 @@
+﻿schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+type LocationInformation {
+  data: String!
+  statusCode: Int!
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): User
+  deleteUser(input: DeleteUserInput!): User
+  updateUser(input: UpdateUserInput!): User
+}
+
+type Query {
+  getLocationInformation(address: String!): LocationInformation
+  getUser(id: String!): User
+  listUsers(filter: TableUserFilterInput, limit: Int, nextToken: String): UserConnection
+}
+
+type Subscription {
+  onCreateUser(address: String, description: String, dob: AWSDate, id: String, name: String): User @aws_subscribe(mutations : ["createUser"])
+  onDeleteUser(address: String, description: String, dob: AWSDate, id: String, name: String): User @aws_subscribe(mutations : ["deleteUser"])
+  onUpdateUser(address: String, description: String, dob: AWSDate, id: String, name: String): User @aws_subscribe(mutations : ["updateUser"])
+}
+
+type User {
+  address: String
+  createdAt: AWSTimestamp
+  description: String
+  dob: AWSDate
+  id: String!
+  name: String
+  updatedAt: AWSTimestamp
+}
+
+type UserConnection {
+  items: [User]
+  nextToken: String
+}
+
+input CreateUserInput {
+  address: String
+  createdAt: AWSTimestamp
+  description: String
+  dob: AWSDate
+  name: String
+  updatedAt: AWSTimestamp
+}
+
+input DeleteUserInput {
+  id: String!
+}
+
+input TableBooleanFilterInput {
+  eq: Boolean
+  ne: Boolean
+}
+
+input TableFloatFilterInput {
+  between: [Float]
+  contains: Float
+  eq: Float
+  ge: Float
+  gt: Float
+  le: Float
+  lt: Float
+  ne: Float
+  notContains: Float
+}
+
+input TableIDFilterInput {
+  beginsWith: ID
+  between: [ID]
+  contains: ID
+  eq: ID
+  ge: ID
+  gt: ID
+  le: ID
+  lt: ID
+  ne: ID
+  notContains: ID
+}
+
+input TableIntFilterInput {
+  between: [Int]
+  contains: Int
+  eq: Int
+  ge: Int
+  gt: Int
+  le: Int
+  lt: Int
+  ne: Int
+  notContains: Int
+}
+
+input TableStringFilterInput {
+  beginsWith: String
+  between: [String]
+  contains: String
+  eq: String
+  ge: String
+  gt: String
+  le: String
+  lt: String
+  ne: String
+  notContains: String
+}
+
+input TableUserFilterInput {
+  address: TableStringFilterInput
+  createdAt: TableIntFilterInput
+  description: TableStringFilterInput
+  dob: TableStringFilterInput
+  id: TableStringFilterInput
+  name: TableStringFilterInput
+  updatedAt: TableIntFilterInput
+}
+
+input UpdateUserInput {
+  address: String
+  createdAt: AWSTimestamp
+  description: String
+  dob: AWSDate
+  id: String!
+  name: String
+  updatedAt: AWSTimestamp
+}

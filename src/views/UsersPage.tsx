@@ -40,7 +40,6 @@ export default function UsersPage() {
   // Load More
   async function handleLoadMore() {
     const currentPage = param ? parseInt(param) : 1;
-    // changeParam(`${currentPage + 1}`); // ! PROBLEM AREA???
     await fetchMore({
       variables: {
         filter: { name: { contains: debouncedSearchKeyword } },
@@ -53,10 +52,9 @@ export default function UsersPage() {
 
   // Search after interval
   useEffect(() => {
-    const fetchLimit = getFetchLimit(PAGE_SIZE);
     refetch({
       filter: { name: { contains: debouncedSearchKeyword } },
-      limit: fetchLimit,
+      limit: getFetchLimit(PAGE_SIZE),
     });
   }, [debouncedSearchKeyword, getFetchLimit, refetch]);
 

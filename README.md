@@ -4,18 +4,9 @@
 > Role: Senior Frontend Engineer
 > Email: mikey.software@gmail.com
 
-## Project Structure
+## Demo
 
-    ├── src                         # Source files
-    │   ├── assets                  # Application Assets - Images, SVGs, Fonts.
-    │   ├── components              # Application Components - Types, Stories, Tests.
-    │   ├── graphql                 # GraphQL Schema - Types, Queries, Mutations, Subcriptions.
-    │   ├── hooks                   # Custom React Hooks
-    │   ├── providers               # Application Providers - Apollo, Styled Components, React Router.
-    │   └── utils                   # Utiltity Functions - Parsers, Formatters, Getters, Setters.
-    │   ├── views                   # Application Pages/Top Components
-    │   └── index.tsx               # Appication Entry Point
-    └── README.md
+You can see the application live at [Demo](https://superforuma-fs-challenge.netlify.app/).
 
 ## Available Scripts
 
@@ -47,6 +38,19 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 Launches the Storybook component library runner in the interactive watch mode.\
 Interactive components are displayed in their different states and variants.
+
+## Project Structure
+
+    ├── src                         # Source files
+    │   ├── assets                  # Application Assets - Images, SVGs, Fonts.
+    │   ├── components              # Application Components - Types, Stories, Tests.
+    │   ├── graphql                 # GraphQL Schema - Types, Queries, Mutations, Subcriptions.
+    │   ├── hooks                   # Custom React Hooks
+    │   ├── providers               # Application Providers - Apollo, Styled Components, React Router.
+    │   └── utils                   # Utiltity Functions - Parsers, Formatters, Getters, Setters.
+    │   ├── views                   # Application Pages/Top Components
+    │   └── index.tsx               # Appication Entry Point
+    └── README.md
 
 ## Requirements Checklist
 
@@ -103,7 +107,3 @@ Interactive components are displayed in their different states and variants.
 - [x] Handle server errors
 - [x] Handle loading states
 - [x] Delete user functionality
-
-## Demo
-
-You can see the application live at [Demo Link](https://superforuma-fs-challenge.netlify.app/).

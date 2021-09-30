@@ -1,9 +1,4 @@
-import {
-  ApolloClient,
-  InMemoryCache,
-  HttpLink,
-  ApolloProvider as Provider,
-} from "@apollo/client";
+import { ApolloClient, InMemoryCache, HttpLink, ApolloProvider as Provider } from "@apollo/client";
 
 // Constants
 const { REACT_APP_APPSYNC_API_URL, REACT_APP_APPSYNC_API_KEY } = process.env;
@@ -16,10 +11,24 @@ const graphqlLink = new HttpLink({
   },
 });
 
+const mergeListUsersQuery = (existing: any, incoming: any) => ({
+  ...existing,
+  ...incoming,
+  items: (existing?.items ?? []).concat(incoming?.items ?? []),
+});
+
 // GraphQL/Apollo client
 const graphqlClient = new ApolloClient({
   link: graphqlLink,
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    typePolicies: {
+      Query: {
+        fields: {
+          listUsers: { keyArgs: ["filter"], merge: mergeListUsersQuery },
+        },
+      },
+    },
+  }),
 });
 
 export default function ApolloProvider({ children }: any) {

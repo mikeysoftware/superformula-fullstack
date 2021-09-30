@@ -1,17 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 // Providers
 import ApolloProvider from "./providers/ApolloProvider";
 import StyleProvider from "./providers/StyleProvider";
+import RouterProvider from "./providers/RouterProvider";
 
 ReactDOM.render(
   <ApolloProvider>
     <React.StrictMode>
       <StyleProvider />
-      <App />
+      <RouterProvider />
     </React.StrictMode>
   </ApolloProvider>,
   document.getElementById("root")

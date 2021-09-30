@@ -38,6 +38,7 @@ const GlobalStyles = createGlobalStyle`
 	}
 	body {
 		line-height: 1;
+		font-size: 16px;
 	}
 	menu, ol, ul {
 		list-style: none;
@@ -56,7 +57,45 @@ const GlobalStyles = createGlobalStyle`
 	}
 
 	/* Custom CSS */
+	* {
+		box-sizing: border-box;
+	}
 
+	html {
+		font-family: 'Source Sans Pro', sans-serif;
+		background: #F8F8F8;
+	}
+
+	:root {
+		/* Breakpoints */
+    --breakpoint-xs: 30rem; // 480px
+    --breakpoint-sm: 40rem; // 640px
+    --breakpoint-md: 48rem; // 768px
+    --breakpoint-lg: 64rem; // 1024px
+    --breakpoint-xl: 83rem; // 1328px
+    --breakpoint-xxl: 100rem; // 1536px
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 300;
+	}
+
+	h1 {
+		font-size: 3rem;
+		line-height: 3.75rem;
+	}
+
+	h2 {
+		font-size: 1.375rem;
+		font-weight: 600;
+		line-height: 1.625rem;
+	}
+
+	p {
+		font-size: 1rem;
+		font-weight: 300;
+		line-height: 1.25rem;
+	}
 `;
 
 export default function StyleProvider() {

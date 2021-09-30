@@ -2,6 +2,7 @@ import ReactDOM from "react-dom";
 import { MouseEvent, useEffect } from "react";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
+import ModalProps from "./Modal.types";
 
 // Animations
 const fadeInAnimation = {
@@ -25,13 +26,6 @@ const fadeUpAnimation = {
     transition: { duration: 0.2 },
   },
 };
-
-// Interface
-interface ModalProps {
-  children: any;
-  isModalVisible: boolean;
-  onModalClose: () => void;
-}
 
 // Component
 export default function Modal({ isModalVisible = false, onModalClose, children }: ModalProps) {

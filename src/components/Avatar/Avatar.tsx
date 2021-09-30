@@ -1,15 +1,9 @@
-import { ImgHTMLAttributes } from "react";
 import styled from "styled-components";
-
-// Interface
-interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {}
+import AvatarProps from "./Avatar.types";
 
 // Component
-export default function Avatar({
-  src = "https://source.unsplash.com/random/192x192",
-  ...rest
-}: AvatarProps) {
-  return <AvatarImage src={src} {...rest} />;
+export default function Avatar({ src = "https://source.unsplash.com/random/192x192", ...rest }: AvatarProps) {
+  return <AvatarImage src={src} alt="user avatar" {...rest} />;
 }
 
 // Styled

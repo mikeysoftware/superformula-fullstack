@@ -1,25 +1,13 @@
 import { Fragment, useState } from "react";
 import styled, { css } from "styled-components";
-import { User } from "../../graphql/schema.types";
 import Card from "../Card";
 import Avatar from "../Avatar";
 import EditModal from "../UserModals/EditModal";
 import DeleteModal from "../UserModals/DeleteModal";
 import { formatISODate } from "../../utils";
-
-// Assets
+import { UserCardProps, ContainerProps } from "./UserCard.types";
 import { ReactComponent as EditIcon } from "../../assets/svg/edit-icon.svg";
 
-// Interface
-interface UserCardProps {
-  user?: User;
-}
-
-interface ContainerProps {
-  isHovered: boolean;
-}
-
-// Component
 export default function UserCard({ user }: UserCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isEditModalVisible, setIsEditModalVisible] = useState(false);
@@ -35,14 +23,14 @@ export default function UserCard({ user }: UserCardProps) {
               <EditIcon />
             </button>
           </div>
-          <Avatar />
+          <Avatar src={`https://source.unsplash.com/random/192x192?sig=${user?.id}`} />
           <div className="about">
-            <h2>{user?.name || "Test User"}</h2>
+            <h2>{user?.name || "N/A Name"}</h2>
             <div className="created">
               created <span>{formatISODate(user?.createdAt)}</span>
             </div>
           </div>
-          <p>{user?.description || "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, ipsa suscipit."}</p>
+          <p>{user?.description || "N/A Description"}</p>
         </UserCardContainer>
         {/* Edit Modal */}
         <EditModal user={user} isOpen={isEditModalVisible} onClose={() => setIsEditModalVisible(false)} />

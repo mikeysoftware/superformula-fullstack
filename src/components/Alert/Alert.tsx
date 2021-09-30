@@ -1,11 +1,5 @@
-import React from "react";
 import styled, { css } from "styled-components";
-
-// Interface
-interface AlertProps {
-  children: any;
-  variant?: "info" | "success" | "error";
-}
+import AlertProps from "./Alert.types";
 
 export default function Alert({ children, variant = "info" }: AlertProps) {
   return <AlertContainer variant={variant}>{children}</AlertContainer>;

@@ -51,7 +51,7 @@ export default function UsersPage() {
     changeParam(`${currentPage + 1}`);
   }
 
-  // Search
+  // Search after interval
   useEffect(() => {
     const fetchLimit = getFetchLimit(PAGE_SIZE);
     refetch({

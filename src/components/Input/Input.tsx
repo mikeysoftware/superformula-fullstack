@@ -1,10 +1,5 @@
-import { InputHTMLAttributes, LabelHTMLAttributes } from "react";
+import { InputProps, LabelProps } from "./Input.types";
 import styled from "styled-components";
-
-// Interface
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
-
-interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {}
 
 // Component
 export default function Input({ ...rest }: InputProps) {

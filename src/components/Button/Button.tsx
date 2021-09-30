@@ -1,14 +1,7 @@
-import { ButtonHTMLAttributes } from "react";
+import ButtonProps from "./Button.types";
 import styled, { css } from "styled-components";
 import Loader from "../Loader";
 
-// Interface
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary";
-  loading?: boolean;
-}
-
-// Component
 export default function Button({ variant = "primary", loading, children, ...rest }: ButtonProps) {
   return (
     <ButtonWrapper variant={variant} {...rest}>

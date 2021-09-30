@@ -1,21 +1,21 @@
 export type CreateUserInput = {
   address?: string | null,
-  createdAt?: number | null,
+  createdAt?: string | null,
   description?: string | null,
   dob?: string | null,
   name?: string | null,
-  updatedAt?: number | null,
+  updatedAt?: string | null,
 };
 
 export type User = {
   __typename: "User",
   address?: string | null,
-  createdAt?: number | null,
+  createdAt?: string | null,
   description?: string | null,
   dob?: string | null,
   id: string,
   name?: string | null,
-  updatedAt?: number | null,
+  updatedAt?: string | null,
 };
 
 export type DeleteUserInput = {
@@ -24,12 +24,12 @@ export type DeleteUserInput = {
 
 export type UpdateUserInput = {
   address?: string | null,
-  createdAt?: number | null,
+  createdAt?: string | null,
   description?: string | null,
   dob?: string | null,
   id: string,
   name?: string | null,
-  updatedAt?: number | null,
+  updatedAt?: string | null,
 };
 
 export type LocationInformation = {
@@ -87,12 +87,12 @@ export type CreateUserMutation = {
   createUser?: {
     __typename: "User",
     address?: string | null,
-    createdAt?: number | null,
+    createdAt?: string | null,
     description?: string | null,
     dob?: string | null,
     id: string,
     name?: string | null,
-    updatedAt?: number | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -104,12 +104,12 @@ export type DeleteUserMutation = {
   deleteUser?: {
     __typename: "User",
     address?: string | null,
-    createdAt?: number | null,
+    createdAt?: string | null,
     description?: string | null,
     dob?: string | null,
     id: string,
     name?: string | null,
-    updatedAt?: number | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -121,12 +121,12 @@ export type UpdateUserMutation = {
   updateUser?: {
     __typename: "User",
     address?: string | null,
-    createdAt?: number | null,
+    createdAt?: string | null,
     description?: string | null,
     dob?: string | null,
     id: string,
     name?: string | null,
-    updatedAt?: number | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -150,12 +150,12 @@ export type GetUserQuery = {
   getUser?: {
     __typename: "User",
     address?: string | null,
-    createdAt?: number | null,
+    createdAt?: string | null,
     description?: string | null,
     dob?: string | null,
     id: string,
     name?: string | null,
-    updatedAt?: number | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -171,12 +171,12 @@ export type ListUsersQuery = {
     items?: Array<{
       __typename: "User",
       address?: string | null,
-      createdAt?: number | null,
+      createdAt?: string | null,
       description?: string | null,
       dob?: string | null,
       id: string,
       name?: string | null,
-      updatedAt?: number | null,
+      updatedAt?: string | null,
     } | null> | null,
     nextToken?: string | null,
   } | null,
@@ -194,12 +194,12 @@ export type OnCreateUserSubscription = {
   onCreateUser?: {
     __typename: "User",
     address?: string | null,
-    createdAt?: number | null,
+    createdAt?: string | null,
     description?: string | null,
     dob?: string | null,
     id: string,
     name?: string | null,
-    updatedAt?: number | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -215,12 +215,12 @@ export type OnDeleteUserSubscription = {
   onDeleteUser?: {
     __typename: "User",
     address?: string | null,
-    createdAt?: number | null,
+    createdAt?: string | null,
     description?: string | null,
     dob?: string | null,
     id: string,
     name?: string | null,
-    updatedAt?: number | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -236,11 +236,11 @@ export type OnUpdateUserSubscription = {
   onUpdateUser?: {
     __typename: "User",
     address?: string | null,
-    createdAt?: number | null,
+    createdAt?: string | null,
     description?: string | null,
     dob?: string | null,
     id: string,
     name?: string | null,
-    updatedAt?: number | null,
+    updatedAt?: string | null,
   } | null,
 };

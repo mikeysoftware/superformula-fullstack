@@ -1,15 +1,11 @@
 import { useRef, useEffect } from "react";
 import styled from "styled-components";
-import mapboxgl, { LngLatLike } from "mapbox-gl";
+import mapboxgl from "mapbox-gl";
+import MapProps from "./Map.types";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 const { REACT_APP_MAPBOX_ACCESS_TOKEN } = process.env;
 mapboxgl.accessToken = REACT_APP_MAPBOX_ACCESS_TOKEN || "";
-
-// Interface
-interface MapProps {
-  mapCenter?: LngLatLike;
-}
 
 export default function Map({ mapCenter = [0.0, 0.0] }: MapProps) {
   const mapContainer: any = useRef(null);
@@ -18,17 +14,20 @@ export default function Map({ mapCenter = [0.0, 0.0] }: MapProps) {
   // Initialize Map
   useEffect(() => {
     if (map.current) return;
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: "mapbox://styles/mapbox/streets-v11",
-      center: mapCenter,
-      zoom: 10,
-    });
-    new mapboxgl.Marker({ color: "#dc2626" }).setLngLat(mapCenter).addTo(map.current);
+    setTimeout(() => {
+      map.current = new mapboxgl.Map({
+        container: mapContainer.current,
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: mapCenter,
+        zoom: 10,
+      });
+      new mapboxgl.Marker({ color: "#dc2626" }).setLngLat(mapCenter).addTo(map.current);
+    }, 350);
   });
 
   // Update Map Center + Marker
   useEffect(() => {
+    if (!map.current) return;
     map.current.setCenter(mapCenter);
     new mapboxgl.Marker({ color: "#dc2626" }).setLngLat(mapCenter).addTo(map.current);
   }, [mapCenter]);
@@ -48,6 +47,8 @@ const MapContainer = styled.div`
   .map {
     position: absolute;
     top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
     width: 100%;
     border-radius: 0.5rem;

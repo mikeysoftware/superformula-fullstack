@@ -1,10 +1,6 @@
 import styled from "styled-components";
-import { HTMLMotionProps, motion } from "framer-motion";
-
-// Interface
-interface CardProps extends HTMLMotionProps<"div"> {
-  children: any;
-}
+import { motion } from "framer-motion";
+import CardProps from "./Card.types";
 
 // Component
 export default function Card({ children, ...rest }: CardProps) {

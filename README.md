@@ -7,6 +7,7 @@
 ## Demo
 
 You can see the application live at [Demo](https://superforuma-fs-challenge.netlify.app/).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5a53b192-e20f-45ab-b4c0-17b04280a479/deploy-status)](https://app.netlify.com/sites/superforuma-fs-challenge/deploys)
 
 ## Available Scripts
 

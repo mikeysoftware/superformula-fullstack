@@ -5,6 +5,7 @@ import { Meta } from "@storybook/react/types-6-0";
 import UserCard from "./UserCard";
 import UserCardProps from "./UserCard.types";
 import ApolloProvider from "../../providers/ApolloProvider";
+import StyleProvider from "../../providers/StyleProvider";
 
 export default {
   title: "Components/UserCard",
@@ -12,6 +13,7 @@ export default {
   decorators: [
     (Story) => (
       <ApolloProvider>
+        <StyleProvider />
         <Story />
       </ApolloProvider>
     ),

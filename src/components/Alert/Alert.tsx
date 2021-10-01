@@ -2,7 +2,11 @@ import styled, { css } from "styled-components";
 import AlertProps from "./Alert.types";
 
 export default function Alert({ children, variant = "info" }: AlertProps) {
-  return <AlertContainer variant={variant}>{children}</AlertContainer>;
+  return (
+    <AlertContainer role="alert" variant={variant}>
+      {children}
+    </AlertContainer>
+  );
 }
 
 const AlertContainer = styled.div<AlertProps>`

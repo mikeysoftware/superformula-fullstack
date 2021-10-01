@@ -30,12 +30,7 @@ const INITIAL_STATE = {
 
 export default function EditModal({ user, isOpen, onClose }: EditModalProps) {
   // Address Information Query
-  const {
-    loading: addressLoading,
-    error: addressError,
-    data: addressData,
-    refetch: addressRefetch,
-  } = useQuery(getLocationInformation, {
+  const { loading: addressLoading, error: addressError, data: addressData, refetch: addressRefetch } = useQuery(getLocationInformation, {
     variables: { address: user?.address },
   });
   const [updateUserAsync, { data, loading, error }] = useMutation(updateUser);
@@ -129,10 +124,10 @@ export default function EditModal({ user, isOpen, onClose }: EditModalProps) {
         <div className="footer">
           <div />
           <div className="actions">
-            <Button type="submit" form="edit-form" loading={loading}>
+            <Button id="edit-form-submit" type="submit" form="edit-form" loading={loading}>
               Save
             </Button>
-            <Button variant="secondary" onClick={handleCloseEditModal}>
+            <Button id="edit-modal-exit" variant="secondary" onClick={handleCloseEditModal}>
               Cancel
             </Button>
           </div>

@@ -18,8 +18,10 @@ export default function UserCard({ user }: UserCardProps) {
       <Fragment>
         <UserCardContainer isHovered={isHovered}>
           <div className="actions">
-            <button onClick={() => setIsDeleteModalVisible(true)}>DEL</button>
-            <button onClick={() => setIsEditModalVisible(true)}>
+            <button id="delete-modal-trigger" onClick={() => setIsDeleteModalVisible(true)}>
+              DEL
+            </button>
+            <button id="edit-modal-trigger" onClick={() => setIsEditModalVisible(true)}>
               <EditIcon />
             </button>
           </div>

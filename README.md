@@ -88,7 +88,7 @@ Interactive components are displayed in their different states and variants.
 - [x] Use unsplash.com to show random avatar images (used [Unsplash Source](https://source.unsplash.com/))
 - [x] You don't have to write configuration from scratch (used [Create React App](https://create-react-app.dev/))
 - [x] Feel free to use a preprocessor like SASS/SCSS/Less or CSS in JS. (used [Styled Components](https://styled-components.com/))
-- [ ] Provide E2E and unit tests (one component&view well tested is enough, no need to test every component/view) (used [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) and [Cypress](https://www.cypress.io/))
+- [x] Provide E2E and unit tests (one component&view well tested is enough, no need to test every component/view) (used [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) and [Cypress](https://www.cypress.io/))
 - [x] Please **do not** use any additional libraries with predefined styles like `react-bootstrap`, `material-ui` etc.
 
 ###### Bonus (in order)

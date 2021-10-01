@@ -39,6 +39,11 @@ It correctly bundles React in production mode and optimizes the build for the be
 Launches the Storybook component library runner in the interactive watch mode.\
 Interactive components are displayed in their different states and variants.
 
+### `npm run cypress`
+
+Launches the Cypress testing interface in watch mode.\
+Test Specifications are preloaded and ready to be demonstrated/tested.
+
 ## Project Structure
 
     ├── src                         # Source files
@@ -46,8 +51,9 @@ Interactive components are displayed in their different states and variants.
     │   ├── components              # Application Components - Types, Stories, Tests.
     │   ├── graphql                 # GraphQL Schema - Types, Queries, Mutations, Subcriptions.
     │   ├── hooks                   # Custom React Hooks
+    │   ├── modules                 # Module Declartations / Custom Libraries
     │   ├── providers               # Application Providers - Apollo, Styled Components, React Router.
-    │   └── utils                   # Utiltity Functions - Parsers, Formatters, Getters, Setters.
+    │   ├── utils                   # Utiltity Functions - Parsers, Formatters, Getters, Setters.
     │   ├── views                   # Application Pages/Top Components
     │   └── index.tsx               # Appication Entry Point
     └── README.md
